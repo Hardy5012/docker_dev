@@ -1,4 +1,4 @@
-FROM  centos_cmake:v1
+FROM  centos_cmake:3.12
 
 ENV GIT_VERSION 2.9.5
 

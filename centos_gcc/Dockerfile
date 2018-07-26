@@ -1,6 +1,6 @@
 FROM centos:7.5.1804
 
-ENV GCC_VERSION 7.3.0
+ENV GCC_VERSION 8.1.0
 ENV GMP_VERSION 6.1.2
 ENV MPFR_VERSION 3.1.5
 ENV MPC_VERSION 1.0.3
@@ -51,7 +51,7 @@ RUN mkdir -p /usr/src/gcc \
   && tar --xz -xvf gcc.tar.xz -C /usr/src/gcc --strip-components=1 \
   && rm -f gcc.tar.xz*\
   && cd /usr/src/gcc \
-  && ./configure --disable-bootstrap --disable-multilib -enable-languages=c,c++ \
+  && ./configure --disable-bootstrap --disable-multilib -enable-languages=c,c++ --prefix=/usr \
   && make -j $(nproc) \
   && make install-strip \
   && cd .. && rm -rf gcc

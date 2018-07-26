@@ -1,4 +1,4 @@
-FROM  centos_gcc:v2
+FROM  centos_gcc:8.1.0
 
 ENV CMAKE_VERSION 3.12
 ENV CMAKE_SUB_VERSION 3.12.0
